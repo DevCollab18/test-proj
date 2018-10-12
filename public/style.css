@@ -1,4 +1,11 @@
- @keyframes moveRight {
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+@keyframes moveRight {
             0% {
                 opacity: 0;
                 transform: translateX(-100%);
@@ -35,3 +42,19 @@
            vertical-align: middle !important;
            min-width: 150px;
        }
+
+
+/* MATERIALIZE - CLIENT PAGE */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* .row {
+    margin-bottom: 0 !important;
+} */
+/* .input-field {
+    margin-bottom: 0 !important;
+} */

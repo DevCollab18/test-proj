@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Clients</title>
+	<link rel="stylesheet" href="../public/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      var file = '/' + $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
+<body>
+	<!-- <div data-include="header"></div> -->
+	<div class="container">
+		<div class="row">
+			<div class="col l3 show-on-large"></div>
+				<div class="search-container input-field col s12 l6">
+					<input type="text">
+					<label>Search</label>
+					<i class="fas fa fa-search"></i>
+				</div>
+				<div class="col l3 show-on-large"></div>
+		</div>
+		<!-- <div class="center-align">
+			<a disabled class="waves-effect waves-light btn">Update</a>
+		</div> -->
+		<div class="row">
+			<form class="col s12">
+				<div class="row">
+					<div class="input-field col s12 m6 l4 offset-l4">
+						<input type="text" disabled placeholder="Client Name" class="center-align">
+						<!-- <label>Client Name</label> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m6 l4 offset-l4">
+						<input type="text" disabled placeholder="Tracking Number" class="center-align">
+						<!-- <label>Tracking Number</label> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Needs Acceptance:</label>
+					</div>
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Okay to Accept SRs over the phone?</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Trades:</label>
+					</div>
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>NTE:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Okay to Sub?</label>
+					</div>
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>CAMS:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>CC:</label>
+					</div>
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Website:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<input type="text" disabled>
+						<label>Okay to Sub?</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea disabled class="materialize-textarea"></textarea>
+						<label>Special Instructions:</label>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="fixed-action-btn">
+			<a class="btn-floating btn-large blue waves-effect waves-light">
+				<i class="fa fa-plus"></i>
+			</a>
+		</div> 
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
