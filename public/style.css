@@ -5,45 +5,15 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
-@keyframes moveRight {
-            0% {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            80% {
-                transform: translateX(20px);
-            }
-            100% {
-                transform: translate(0);
-            }
-        }
-        @keyframes moveLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            80% {
-                transform: translateX(-20px);
-            }
-            100% {
-                transform: translate(0);
-            }
-        }
-        #leftbox {
-            animation: moveRight 0.7s ease-out;
-            backface-visibility: hidden;
-        }
-        #rightbox {
-            animation: moveLeft 0.7s ease-in;
-            backface-visibility: hidden;
-        }
-
-       th, td {
-           vertical-align: middle !important;
-           min-width: 150px;
-       }
-
-
+/* MATERIALIZE LOGIN PAGE */
+.login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    max-width: 600px;
+    padding: 15px;
+}
 /* MATERIALIZE - CLIENT PAGE */
 .search-container {
     display: flex;

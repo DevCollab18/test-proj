@@ -26,22 +26,38 @@
 
 <!-- DESKTOP DROPDOWN -->
 <ul id="dropdown1" class="dropdown-content">
-  <li><a href="#">one</a></li>
-  <li><a href="#">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#">three</a></li>
+	<li><a href="#">one</a></li>
+	<li><a href="#">two</a></li>
+	<li class="divider"></li>
+	<li><a href="#">three</a></li>
 </ul>
 <ul id="dropdown2" class="dropdown-content">
-  <li><a href="#">one</a></li>
-  <li><a href="#">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#">three</a></li>
+	<li><a href="#">one</a></li>
+	<li><a href="#">two</a></li>
+	<li class="divider"></li>
+	<li><a href="#">three</a></li>
 </ul>
 
 <div class="modal" id="login-modal">
-	<div class="modal-content">
+	<div class="modal-content center-align">
 		<h3>Login</h3>
-		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+		<form class="s12">
+			<div class="row">
+				<div class="input-field s12">
+					<i class="material-icons prefix">group</i><input type="email" required>
+					<label>Username</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field s12">
+						<i class="material-icons prefix">lock</i><input type="password" required>
+					<label>Password</label>
+				</div>
+			</div>
+			<button class="btn waves-effect waves-light blue" type="submit" name="action">
+				Login
+			</button>
+		</form>
 	</div>
 </div>
 
@@ -90,5 +106,8 @@
 }
 #dropdown4 {
 	top: 193px !important;
+}
+.modal {
+	width: 30%;
 }
 </style>
