@@ -11,97 +11,152 @@
 	<title>Client Page</title>
 </head>
 <script>
+	// Navbar Component Function
 	$(function(){
       $("#navbar").load("partials/navbar.html"); 
-    });
+	});
+
+	// Get the <datalist> and <input> elements.
+	
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var myObj = JSON.parse(this.responseText);
+			for(x in myObj){
+				// Create a new <option> element.
+				var dataList = document.getElementById('data-list');
+				var input = document.getElementById('autocomplete-input');
+				var option = document.createElement('option');
+        		// Set the value using the item in the JSON array.
+				option.value = myObj[x].client;
+				// Add the <option> element to the <datalist>.
+				dataList.appendChild(option);
+			}
+		}
+	};
+	xmlhttp.open("GET", "LVI_CLIENTS.json", true);
+	xmlhttp.send();
+		
+	// Adding & Creating Client Function
+	$(document).ready(function(){ 
+  		$('#add-btn').click(function(){ 
+   			$('.disabled').prop("disabled", false);
+   			$(":input[name=client]").focus();
+			$('.search-input').prop("disabled", true);
+			$(this).addClass('hide');
+			$('#update-btn').addClass('hide');
+			$('#create-btn, #delete-btn').removeClass('hide');
+  		});
+
+		$('#delete-btn').click(function(){
+			$('.disabled').prop("disabled", true).val('');
+			$('.search-input').prop("disabled", false);
+			$(this).addClass('hide');
+			$('#create-btn').addClass('hide');
+			$('#update-btn, #add-btn').removeClass('hide');
+		});
+	});
 </script>
+<style>
+	.autocomplete-content {
+		width: 1000px !important;
+	}
+</style>
 <body>
 	<div id="navbar"></div>
+
 	<div class="container">
 		<div class="row">
-			<div class="col l3 show-on-large"></div>
-				<div class="search-container input-field col s12 l6">
-					<input type="text">
+			<div class="col l4 show-on-large"></div>
+				<div class="search-container input-field col s12 l4">
+					<input list="data-list" type="text"id="autocomplete-input" class="autocomplete search-input">
+					<datalist id="data-list"></datalist>
 					<label>Search</label>
-					<i class="material-icons">search</i>
+					<button class="material-icons" id="search-btn">search</button>
 				</div>
-				<div class="col l3 show-on-large"></div>
+				<div class="col l4 show-on-large"></div>
 		</div>
-		<!-- <div class="center-align">
-			<a disabled class="waves-effect waves-light btn">Update</a>
-		</div> -->
+		
 		<div class="row">
 			<form class="col s12">
+				<div class="center-align">
+					<button type="submit" id="update-btn" disabled class="waves-effect waves-light btn-large">Update</button>
+					<button type="submit" id="confirm-update-btn" disabled class="waves-effect waves-light btn-large hide">Confirm Update</button>
+					<button type="submit" id="create-btn" class="waves-effect waves-light btn-large hide blue">Create Client</button>
+				</div>
 				<div class="row">
 					<div class="input-field col s12 m6 offset-m3">
-						<input type="text" disabled placeholder="Client Name" class="center-align">
+						<input type="text" id="client" disabled placeholder="Client Name" class="center-align disabled">
 						<!-- <label>Client Name</label> -->
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 m6 offset-m3">
-						<input type="text" disabled placeholder="Tracking Number" class="center-align">
+						<input type="text" name="trackingnumber" disabled placeholder="Tracking Number" class="center-align disabled">
 						<!-- <label>Tracking Number</label> -->
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" name="acceptance" disabled class="disabled">
 						<label>Needs Acceptance:</label>
 					</div>
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" name="accept-sr" disabled class="disabled">
 						<label>Okay to Accept SRs over the phone?</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>Trades:</label>
 					</div>
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>NTE:</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>Okay to Sub?</label>
 					</div>
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>CAMS:</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>CC:</label>
 					</div>
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>Website:</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12 l6">
-						<input type="text" disabled>
+						<input type="text" disabled class="disabled">
 						<label>Okay to Sub?</label>
 					</div>
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea disabled class="materialize-textarea"></textarea>
+						<textarea disabled id="test" class="materialize-textarea disabled"></textarea>
 						<label>Special Instructions:</label>
 					</div>
 				</div>
 			</form>
 		</div>
 		<div class="fixed-action-btn">
-			<a class="btn-floating btn-large blue waves-effect waves-light">
+			<button class="btn-floating btn-large blue waves-effect waves-light" id="add-btn">
 				<i class="material-icons">add</i>
-			</a>
+			</button>
+			<button class="btn-floating btn-large red waves-effect waves-light hide" id="delete-btn">
+				<i class="material-icons">close</i>
+			</button>
 		</div> 
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
