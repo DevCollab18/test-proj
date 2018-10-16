@@ -4,7 +4,9 @@
 	<nav>
 		<div class="nav-wrapper blue">
 			<div class="container">
-				<a href="/views/index.html" class="brand-logo">ENFRAUSA</a>
+				<a href="/views/index.html" class="brand-logo">
+					<img src="../public/logo4.png" alt="">
+				</a>
 				<a href="#" class="sidenav-trigger" data-target="mobile-nav">
 					<!-- <i class="fas fa fa-bars" style="font-size: 25px;"></i> -->
 					<i class="material-icons">menu</i>
@@ -38,7 +40,7 @@
 	<li><a href="#">three</a></li>
 </ul>
 
-<div class="modal" id="login-modal">
+<!-- <div class="modal" id="login-modal">
 	<div class="modal-content center-align">
 		<h3>Login</h3>
 		<form class="s12">
@@ -59,7 +61,7 @@
 			</button>
 		</form>
 	</div>
-</div>
+</div> -->
 
 <!-- MOBILE SIDENAV -->
 <ul class="sidenav" id="mobile-nav">
@@ -69,8 +71,8 @@
 	<li><a class="dropdown-trigger" href="#" data-target="dropdown4">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
 	<li><a href="">Cam Assignments</a></li>
 	<li><a href="">Litmos</a></li>
-	<li><a href="">Sign Up</a></li>
-	<li><a href="#login-modal" class="modal-trigger">Login</a></li>
+	<!-- <li><a href="">Sign Up</a></li> -->
+	<!-- <li><a href="#login-modal" class="modal-trigger">Login</a></li> -->
 </ul>
 
 <!-- MOBILE DROPDOWN -->
@@ -97,20 +99,3 @@
 	})
 	$(".dropdown-trigger").dropdown();
 </script>
-<style>
-nav ul a {
-	padding: 0 8px !important;
-}
-#dropdown1, #dropdown2 {
-	top: 65px !important;
-}
-#dropdown3 {
-	top: 145px !important;
-}
-#dropdown4 {
-	top: 193px !important;
-}
-.modal {
-	width: 30%;
-}
-</style>

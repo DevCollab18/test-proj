@@ -5,6 +5,24 @@ body {
     box-sizing: border-box;
     overflow-x: hidden;
 }
+nav ul a {
+	padding: 0 8px !important;
+}
+#dropdown1, #dropdown2 {
+	top: 65px !important;
+}
+#dropdown3 {
+	top: 145px !important;
+}
+#dropdown4 {
+	top: 193px !important;
+}
+.modal {
+	width: 30%;
+}
+.brand-logo img {
+    width: 230px;
+}
 /* BACKGROUND */
 .section1 {
     position: absolute;
@@ -29,6 +47,9 @@ body {
 @media only screen and (max-width: 425px) {
     .section2 {
         height: 67vh;
+    }
+    .brand-logo img {
+        width: 100%;
     }
 }
 @media only screen and (min-width: 426px) and (max-width: 800px) {

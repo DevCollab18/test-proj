@@ -1,7 +1,16 @@
 
+.logo-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.logo-container img {
+    width: 225px;
+}
 .card {
     position: absolute !important;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 600px !important;
@@ -27,16 +36,12 @@
     height: 44vh;
     background-color: #2196F3; 
 }
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
 @media only screen and (max-width: 425px) {
     .section2 {
         height: 67vh;
+    }
+    .logo-container img {
+        width: 100%;
     }
 }
 @media only screen and (min-width: 426px) and (max-width: 800px) {
