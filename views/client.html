@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="../public/style.css">
+	<link rel="stylesheet" href="../public/client.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -57,56 +58,71 @@
 							// Create a new <option> element.
 							if (selected == myObj[x].client ){
 								//4
-								$('#client').val(myObj[x].client);
-								$('#job_owner').val(myObj[x].job_owner);
-								$('#trackingnumber').val(myObj[x].tracking_number);
-								$('#need_acceptance').val(myObj[x].need_acceptance);
-								$('#accept_phone').val(myObj[x].ok_to_accept_srs_over_the_phone);
-								$('#trades').val(myObj[x].trades);
-								$('#nte').val(myObj[x].nte);
-								$('#ok_to_sub').val(myObj[x].ok_to_sub);
-								$('#cam').val(myObj[x].cam);
-								$('#cc').val(myObj[x].cc);
-								$('#website').val(myObj[x].website);
-								$('#instructions').val(myObj[x].special_instructions);
+								$('#client').html(jQuery.parseHTML(myObj[x].client));
+								$('#job_owner').html(jQuery.parseHTML(myObj[x].job_owner));
+								$('#trackingnumber').html(jQuery.parseHTML(myObj[x].tracking_number));
+								$('#need_acceptance').html(jQuery.parseHTML(myObj[x].need_acceptance));
+								$('#accept_phone').html(jQuery.parseHTML(myObj[x].ok_to_accept_srs_over_the_phone));
+								$('#trades').html(jQuery.parseHTML(myObj[x].trades));
+								$('#nte').html(jQuery.parseHTML(myObj[x].nte));
+								$('#ok_to_sub').html(jQuery.parseHTML(myObj[x].ok_to_sub));
+								$('#cam').html(jQuery.parseHTML(myObj[x].cam));
+								$('#cc').html(jQuery.parseHTML(myObj[x].cc));
+								$('#website').html(jQuery.parseHTML(myObj[x].website));
+								$('#instructions').html(jQuery.parseHTML(myObj[x].special_instructions));
 							}
 						}
 					}
 				};
-			xmlhttp.open("GET", "LVI_CLIENTS.json", true);
-			xmlhttp.send();
+				xmlhttp.open("GET", "LVI_CLIENTS.json", true);
+				xmlhttp.send();
 			})
   		})
 	});
 
 	// Adding & Creating Client Function
 	$(document).ready(function(){ 
+		$("#update-btn").attr('disabled', true);
+		$(".disabled").attr('disabled', true);
+		$('input[type="text"],textarea').on('keyup', function () {
+			var textarea_value = $("#instructions").val();
+			var text_value = $('disabled').val();
+			if (textarea_value != '' && text_value != '') {
+				$('#update-btn').attr('disabled', false);
+			} else {
+				$('#update-btn').attr('disabled', true);
+			}
+    	});
+		$('#update-btn').click(function(){
+			$('.disabled').attr('disabled', false);
+			
+		});
   		$('#add-btn').click(function(){
    			$('.disabled').prop("disabled", false);
 			$('.disabled').val("");
    			$(":input[name=client]").focus();
 			$('.search-input').prop("disabled", true).val("");
 			$(this).addClass('hide');
-			
-			$('#update-btn').addClass('hide');
-			$('#create-btn, #delete-btn, #label').removeClass('hide');
+			$('#update-btn, #label').addClass('hide');
+			$('#create-btn, #delete-btn').removeClass('hide');
   		});
 
 		$('#delete-btn').click(function(){
-			$('.disabled').prop("disabled", true);
-			$('.disabled').val("");
+			$('.disabled').prop("disabled", true).val(" ");
 			$('.search-input').prop("disabled", false);
 			$(this).addClass('hide');
-			$('#create-btn, #label').addClass('hide');
-			$('#update-btn, #add-btn').removeClass('hide');
-		});
+			$('#trackingnumber').attr('placeholder', this.val);
+			$('#create-btn').addClass('hide');
+			$('#update-btn, #add-btn, #label').removeClass('hide');
+			$('#update-btn').attr("disabled", true);
+		});		
 	});
 </script>
 
 <body>
 	<div id="navbar"></div>
 
-	<div class="container">
+	<div class="container client-container">
 		<div class="row">
 			<div class="col l4 show-on-large"></div>
 				<div class="search-container input-field col s12 l4">
@@ -120,78 +136,93 @@
 		</div>
 		
 		<div class="row">
-			<form class="col s12">
+			<!-- <div class="center-align">
+				<button id="update-btn" class="waves-effect waves-light btn-large">Update</button>	
+			</div> -->
+			<div class="card col s12">
 				<div class="center-align">
-					<button type="submit" id="update-btn" disabled class="waves-effect waves-light btn-large">Update</button>
+					
 					<button type="submit" id="confirm-update-btn" disabled class="waves-effect waves-light btn-large hide">Confirm Update</button>
-					<button type="submit" id="create-btn" class="waves-effect waves-light btn-large hide blue">Create Client</button>
+					<!-- <button type="submit" id="create-btn" class="waves-effect waves-light btn-large hide blue">Create Client</button> -->
 				</div>
 				<div class="row">
-					<div class="input-field col s12 m6 offset-m3">
-						<input type="text" id="client" disabled class="center-align disabled" value=" ">
-						<label>Client Name</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 m6 offset-m3">
-						<input type="text" id="job_owner" name="jobowner" disabled class="center-align disabled" value=" ">
-						<label>Job Owner</label>
+					<div class="col s12 m4 offset-m4 center-align">
+						<h5>Client</h5>
+						<div id="client"></div>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12 l6">
-						<input type="text" id="trackingnumber" name="trackingnumber" disabled class="disabled" value=" ">
-						<label>Tracking Number</label>
-					</div>
-					<div class="input-field col s12 l6">
-						<input type="text" name="acceptance" id="need_acceptance" disabled class="disabled" value=" ">
-						<label>Needs Acceptance:</label>
+					<div class="col s12 m4 offset-m4 center-align">
+						<h5>Job Owner</h5>
+						<div id="job_owner"></div>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12 l6">
-						<input type="text" id="accept_phone" name="accept-sr" disabled class="disabled" value=" ">
-						<label>Okay to Accept SRs over the phone?</label>
+					<div class="col s12 l6">
+						<h5>Tracking Number:</h5>
+						<div id="trackingnumber"></div>	
+						<hr>					
 					</div>
-					<div class="input-field col s12 l6">
-						<input type="text" id="trades" disabled class="disabled" value=" ">
-						<label>Trades:</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12 l6">
-						<input type="text" id="nte" disabled class="disabled" value=" ">
-						<label>NTE:</label>
-					</div>
-					<div class="input-field col s12 l6">
-						<input type="text" id="ok_to_sub" disabled class="disabled" value=" ">
-						<label>Okay to Sub?</label>
+					<div class="col s12 l6">
+						<h5>Needs Acceptance:</h5>
+						<div id="need_acceptance"></div>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12 l6">
-						<input type="text" id="cam" disabled class="disabled" value=" ">
-						<label>CAMS:</label>
+					<div class="col s12 l6">
+						<h5>Okay to Accept SRs over the phone?</h5>
+						<div id="accept_phone"></div>
+						<hr>
 					</div>
-					<div class="input-field col s12 l6">
-						<input type="text" id="cc" disabled class="disabled" value=" ">
-						<label>CC:</label>
+					<div class="col s12 l6">
+						<h5>Trades:</h5>
+						<div id="trades"></div>
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 l6">
+						<h5>NTE:</h5>
+						<div id="nte"></div>
+						<hr>
+					</div>
+					<div class="col s12 l6">
+						<h5>Okay to Sub?</h5>
+						<div id="ok_to_sub"></div>
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 l6">
+						<h5>CAMS:</h5>
+						<div id="cam"></div>
+						<hr>
+					</div>
+					<div class="col s12 l6">
+						<h5>CC:</h5>
+						<div id="cc"></div>
+						<hr>
 					</div>
 					
 				</div>
 				<div class="row">
-					<div class="input-field col s12 l6">
-						<input type="text" id="website" disabled class="disabled" value=" ">
-						<label>Website:</label>
+					<div class="col s12 l6">
+						<h5>Website:</h5>
+						<div id="website"></div>
+						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="input-field col s12">
-						<textarea type="text" disabled id="instructions" class="materialize-textarea disabled">&#32;</textarea>
-						<label>Special Instructions:</label>
+					<div class=" col s12">
+						<h5>Special Instructions:</h5>
+						<div id="instructions"></div>
+						<hr>
 					</div>
 				</div>
-			</form>
+			</div>
 		</div>
 		<div class="fixed-action-btn">
 			<button class="btn-floating btn-large blue waves-effect waves-light" id="add-btn">

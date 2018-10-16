@@ -47,35 +47,3 @@ body {
     padding: 15px;
 } /* MATERIALIZE LOGIN PAGE - END */
 
-/* MATERIALIZE - CLIENT PAGE */
-#search-btn {
-    border: none;
-    background-color: #fff;
-    cursor: pointer;
-}
-#search-btn:onclick {
-    background-color: #fff;
-}
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-textarea {
-    height: 100px !important;
-}
-
-.search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-} /* MATERIALIZE - CLIENT PAGE - END */
-
-/* .row {
-    margin-bottom: 0 !important;
-} */
-/* .input-field {
-    margin-bottom: 0 !important;
-} */
