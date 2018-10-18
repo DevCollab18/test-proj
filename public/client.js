@@ -90,8 +90,20 @@ $(document).ready(function(){
     
     $('#update-btn').click(function(){
         CKEDITOR.disableAutoInline = true;
-        CKEDITOR.inline('client');
+        
         $("#instructions2").html($('#instructions').html());
+        
+        CKEDITOR.inline('client2');
+		CKEDITOR.inline('jobowner2');
+		CKEDITOR.inline('trackingnumber2');
+		CKEDITOR.inline('acceptance2');
+		CKEDITOR.inline('accept-sr2');
+		CKEDITOR.inline('trades2');
+		CKEDITOR.inline('nte2');
+		CKEDITOR.inline('sub2');
+		CKEDITOR.inline('cam2');
+		CKEDITOR.inline('cc2');
+		CKEDITOR.inline('website2');
         CKEDITOR.inline('instructions2');
         
     });
@@ -100,7 +112,7 @@ $(document).ready(function(){
         // $('.disabled').prop("disabled", false);
         $('#cke_14_contents').focus();
         CKEDITOR.disableAutoInline = true;
-        CKEDITOR.inline('client2');
+		CKEDITOR.inline('client2');
 		CKEDITOR.inline('jobowner2');
 		CKEDITOR.inline('trackingnumber2');
 		CKEDITOR.inline('acceptance2');
