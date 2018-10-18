@@ -9,116 +9,10 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="../public/ckeditor2/ckeditor.js"></script>
+	<script src="../public/client.js"></script>
 	<title>Client Page</title>
 </head>
-<script>
-	// Navbar Component Function
-	$(function(){
-      $("#navbar").load("partials/navbar.html"); 
-	});
-
-	//Autocomplete Datalist
-	var selected;
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			var myObj = JSON.parse(this.responseText);
-			for(x in myObj){
-				// Create a new <option> element.
-				var dataList = document.getElementById('data-list');
-				var input = document.getElementById('autocomplete-input');
-				var option = document.createElement('option');
-        		// Set the value using the item in the JSON array.
-				option.value = myObj[x].client;
-				// Add the <option> element to the <datalist>.
-				dataList.appendChild(option);
-			}
-		}
-	};
-	xmlhttp.open("GET", "LVI_CLIENTS.json", true);
-	xmlhttp.send();
-
-	// Populate Input Fields
-	$(document).ready(function() {
-		$('#name-lists').on('input', function() {
-	    	var userText = $(this).val();
-	    	$("#data-list").find("option").each(function() {
-	      		if ($(this).val() == userText) {
-	        		selected = $(this).val();
-	        		//1
-	        		$('#client').val($(this).val());
-	      		}
-				//2
-				//3
-				var xmlhttp = new XMLHttpRequest();
-				xmlhttp.onreadystatechange = function() {
-					if (this.readyState == 4 && this.status == 200) {
-						var myObj = JSON.parse(this.responseText);
-						for(x in myObj){
-							// Create a new <option> element.
-							if (selected == myObj[x].client ){
-								//4
-								$('#client').html(jQuery.parseHTML(myObj[x].client));
-								$('#job_owner').html(jQuery.parseHTML(myObj[x].job_owner));
-								$('#trackingnumber').html(jQuery.parseHTML(myObj[x].tracking_number));
-								$('#need_acceptance').html(jQuery.parseHTML(myObj[x].need_acceptance));
-								$('#accept_phone').html(jQuery.parseHTML(myObj[x].ok_to_accept_srs_over_the_phone));
-								$('#trades').html(jQuery.parseHTML(myObj[x].trades));
-								$('#nte').html(jQuery.parseHTML(myObj[x].nte));
-								$('#ok_to_sub').html(jQuery.parseHTML(myObj[x].ok_to_sub));
-								$('#cam').html(jQuery.parseHTML(myObj[x].cam));
-								$('#cc').html(jQuery.parseHTML(myObj[x].cc));
-								$('#website').html(jQuery.parseHTML(myObj[x].website));
-								$('#instructions').html(jQuery.parseHTML(myObj[x].special_instructions));
-							}
-						}
-					}
-				};
-				xmlhttp.open("GET", "LVI_CLIENTS.json", true);
-				xmlhttp.send();
-			})
-  		})
-	});
-
-	// Adding & Creating Client Function
-	$(document).ready(function(){ 
-		$("#update-btn").attr('disabled', true);
-		$(".disabled").attr('disabled', true);
-		$('input[type="text"],textarea').on('keyup', function () {
-			var textarea_value = $("#instructions").val();
-			var text_value = $('disabled').val();
-			if (textarea_value != '' && text_value != '') {
-				$('#update-btn').attr('disabled', false);
-			} else {
-				$('#update-btn').attr('disabled', true);
-			}
-    	});
-		$('#update-btn').click(function(){
-			$('.disabled').attr('disabled', false);
-			
-		});
-  		$('#add-btn').click(function(){
-   			$('.disabled').prop("disabled", false);
-			$('.disabled').val("");
-   			$(":input[name=client]").focus();
-			$('.search-input').prop("disabled", true).val("");
-			$(this).addClass('hide');
-			$('#update-btn, #label').addClass('hide');
-			$('#create-btn, #delete-btn').removeClass('hide');
-  		});
-
-		$('#delete-btn').click(function(){
-			$('.disabled').prop("disabled", true).val(" ");
-			$('.search-input').prop("disabled", false);
-			$(this).addClass('hide');
-			$('#trackingnumber').attr('placeholder', this.val);
-			$('#create-btn').addClass('hide');
-			$('#update-btn, #add-btn, #label').removeClass('hide');
-			$('#update-btn').attr("disabled", true);
-		});		
-	});
-</script>
-
 <body>
 	<div id="navbar"></div>
 
@@ -136,9 +30,9 @@
 		</div>
 		
 		<div class="row">
-			<!-- <div class="center-align">
-				<button id="update-btn" class="waves-effect waves-light btn-large">Update</button>	
-			</div> -->
+			<div class="center-align">
+				<button id="update-btn" class="waves-effect waves-light btn-large modal-trigger" data-target="client-modal">Update</button>	
+			</div>
 			<div class="card col s12">
 				<div class="center-align">
 					<button type="submit" id="confirm-update-btn" disabled class="waves-effect waves-light btn-large hide">Confirm Update</button>
@@ -223,14 +117,116 @@
 			</div>
 		</div>
 		<div class="fixed-action-btn">
-			<button class="btn-floating btn-large blue waves-effect waves-light" id="add-btn">
+			<button class="btn-floating btn-large blue waves-effect waves-light modal-trigger" id="add-btn" data-target="client-modal">
 				<i class="material-icons">add</i>
 			</button>
 			<button class="btn-floating btn-large red waves-effect waves-light hide" id="delete-btn">
 				<i class="material-icons">close</i>
 			</button>
 		</div> 
+		
 	</div>
+
+	<!-- CREATE/UPDATE CLIENT MODAL -->
+	<div id="client-modal" class="modal">
+		<div class="modal-content">
+			<div class="row">
+				<!-- <textarea name="editor1"></textarea> -->
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12 m6 offset-m3">
+							<h5 class="center-align">Client</h5>
+							<textarea id="client2" name="client2" class="center-align materialize-textarea client2" value="hahaha" contenteditable="true"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 m6 offset-m3">
+							<h5 class="center-align">Job Owner</h5>
+							<textarea id="job_owner2" name="jobowner2" class="center-align materialize-textarea" value=" " contenteditable="true"></textarea>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 l6">
+							<h5>Tracking Number:</h5>
+							<textarea id="trackingnumber2" name="trackingnumber2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
+							
+						</div>
+						<div class="input-field col s12 l6">
+							<h5>Need Acceptance:</h5>
+							<textarea name="acceptance2" id="need_acceptance2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 l6">
+							<h5>Okay to Accept SRs over the phone?</h5>
+							<textarea id="accept_phone2" name="accept-sr2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
+							
+						</div>
+						<div class="input-field col s12 l6">
+							<h5>Trades:</h5>
+							<textarea id="trades2" class="materialize-textarea" name="trades2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 l6">
+							<h5>NTE:</h5>
+							<textarea id="nte2" class="materialize-textarea" name="nte2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+						<div class="input-field col s12 l6">
+							<h5>Okay to Sub?</h5>
+							<textarea id="ok_to_sub2" class="materialize-textarea" name="sub2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 l6">
+							<h5>CAMS:</h5>
+							<textarea id="cam2" class="materialize-textarea" name="cam2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+						<div class="input-field col s12 l6">
+							<h5>CC:</h5>
+							<textarea id="cc2" class="materialize-textarea" name="cc2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="input-field col s12 l6">
+							<h5>Website:</h5>
+							<textarea id="website2" class="materialize-textarea" name="website2" value=" " contenteditable="true"></textarea>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<h5>Special Instructions:</h5>
+							<textarea id="instructions2" name="instructions2" class="materialize-textarea" contenteditable="true"></textarea>	
+						</div>
+						
+						<!-- <div class="input-field col s12">
+							<h5>Special Instructions:</h5>
+							<div id="test1" name="test1"></div>		
+						</div> -->
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="submit" id="create-btn" class="waves-effect waves-light btn-large blue">Create Client</button>
+		</div>
+	</div>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		// CKEDITOR.replace('editor1');
+		
+		
+	</script>
 </body>
 </html>
+

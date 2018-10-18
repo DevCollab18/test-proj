@@ -22,8 +22,20 @@ body {
 .row .col.s12 {
     padding: 10px 20px 0 20px;
 }
-textarea {
+/* textarea {
     height: 100px !important;
+} */
+.cke_editable {
+    background-color: #fff;
+    border: 1px solid #c9c9c9;
+    border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 55px !important;
+    overflow-x: auto !important;
+}
+.cke_editable ul, .cke_editable ul > li {
+    list-style-type: disc !important;
 }
 .search-container {
     display: flex;
@@ -35,6 +47,9 @@ textarea {
 }
 .client-container ul, .client-container ul > li {
     list-style-type: disc !important;
+}
+.modal {
+    max-height: 80% !important;
 }
 /* MATERIALIZE - CLIENT PAGE - END */
 
