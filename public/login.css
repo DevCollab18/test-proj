@@ -22,8 +22,8 @@
     height: 50vh;
 }
 .section1 img {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 25%;
     transform: translateY(-30%);
     width: 100vw;
     

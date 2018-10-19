@@ -16,14 +16,67 @@
         $("#navbar").load("partials/navbar.html"); 
     });
 </script>
+<style>
+.announcements {
+    margin-top: 125px;
+    padding: 5px 15px 15px 15px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    background-color: #fff;
+}
+.an-left {
+    flex: 3;
+    border-bottom: 1px solid #c9c9c9;
+    padding: 15px;
+}
+.an-right {
+    flex: 4;
+    padding: 15px 15px 15px 25px;
+}
+.announcements ul {
+    padding-left: 25px;
+}
+.announcements ul li {
+    list-style-type: disc;
+}
+@media(min-width: 993px) {
+    .announcements {
+        display: flex;
+    }
+    .an-left {
+        border-right: none;
+        border-right: 1px solid #c9c9c9;
+        border-bottom: none;   
+    }
+}
+</style>
 <body>
     <div id="navbar"></div>
     <section class="section1"><img src="../public/bg1.png"></section>
     <section class="section2"></section>
-
+    <div class="container">
+        <div class="announcements">
+            <div class="an-left">
+                <h4>What's New!</h4>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod obcaecati eum quidem, inventore omnis incidunt doloremque dolore. Voluptate similique recusandae, beatae cupiditate veniam molestiae, nam perferendis autem consequatur est nesciunt.</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae dolores quam ipsa magnam facere placeat accusamus laborum fugit aut praesentium dicta ex, voluptas ad! Eaque quisquam pariatur beatae accusantium quas.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quam nostrum molestiae nulla cumque illum, aspernatur consequatur animi optio quaerat iusto. Porro nam dolores enim optio magnam. Odit, totam consequuntur?</li>
+                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae assumenda provident vel sed esse inventore itaque eius totam necessitatibus voluptatibus similique atque, quis accusantium quia expedita eaque minus ipsam tempore!</li>
+                </ul>
+            </div>
+            <div class="an-right">
+                <h4>Announcements:</h4>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet magnam ut nesciunt voluptas possimus atque ea iure minus reiciendis praesentium nobis aspernatur, quos tempora! Maxime amet dicta nemo obcaecati nisi voluptatum quis voluptas. Consequuntur ut unde, ipsam, amet tenetur sequi porro maiores animi repellat odio nisi suscipit inventore officiis!</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ea aperiam ullam similique ipsa, omnis aliquam consequuntur, nihil dicta dolorem tempora molestiae, impedit natus labore deleniti! Corporis quo, incidunt nesciunt iure eos earum dolorum consequatur. Veniam deleniti repellendus nostrum repellat omnis modi unde quos inventore, quam est maiores sed harum!</li>
+                    <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam excepturi numquam perferendis reiciendis esse quidem odit ut dolor illo iste, nulla voluptas impedit vitae odio quibusdam eos qui? Perferendis dolores cum temporibus ipsum placeat unde autem maxime laudantium aliquam saepe vel mollitia voluptates nulla eos, vero reprehenderit eum asperiores, tenetur adipisci accusantium fuga, repudiandae nobis cumque omnis? Consectetur, officiis iure.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 </body>
-</html>
+</html>  

@@ -2,6 +2,9 @@ body {
     background-color: #f1f1f1;
 }
 /* MATERIALIZE - CLIENT PAGE */
+.modal-content .row, .modal-content .input-field {
+    margin-bottom: 0 !important;
+}
 #search-btn {
     border: none;
     background-color: #f1f1f1;
@@ -16,24 +19,37 @@ body {
     justify-content: center;
     
 }
-.col {
-    margin-bottom: 20px !important;
-}
 .row .col.s12 {
-    padding: 10px 20px 0 20px;
+    padding: 5px 15px 0 15px;
+}
+.form-label {
+    font-size: 20px;
+}
+.update-cont {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 /* textarea {
     height: 100px !important;
 } */
+.modal .modal-content {
+    padding: 0 24px 24px 24px !important;
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 .cke_editable {
     background-color: #fff;
     border: 1px solid #c9c9c9;
     border-radius: 5px;
     padding-left: 30px;
     padding-right: 30px;
-    height: 55px !important;
     overflow-x: auto !important;
 }
+
 .cke_editable ul, .cke_editable ul > li {
     list-style-type: disc !important;
 }
@@ -50,6 +66,9 @@ body {
 }
 .modal {
     max-height: 80% !important;
+}
+#create-btn {
+    margin-top: 30px;
 }
 /* MATERIALIZE - CLIENT PAGE - END */
 

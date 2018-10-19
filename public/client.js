@@ -31,19 +31,14 @@ $(document).ready(function() {
         $("#data-list").find("option").each(function() {
             if ($(this).val() == userText) {
                 selected = $(this).val();
-                //1
                 $('#client').val($(this).val());
             }
-            //2
-            //3
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var myObj = JSON.parse(this.responseText);
                     for(x in myObj){
-                        // Create a new <option> element.
                         if (selected == myObj[x].client ){
-                            //4
                             $('#client').html(jQuery.parseHTML(myObj[x].client));
                             $('#job_owner').html(jQuery.parseHTML(myObj[x].job_owner));
                             $('#trackingnumber').html(jQuery.parseHTML(myObj[x].tracking_number));
@@ -58,7 +53,7 @@ $(document).ready(function() {
                             $('#instructions').html(jQuery.parseHTML(myObj[x].special_instructions));
                             
                         }
-                        
+                        $('.search-input').val("");
                     }
                 }
             };
@@ -70,47 +65,54 @@ $(document).ready(function() {
 
 // Adding & Creating Client Function
 $(document).ready(function(){ 
-    // $("#update-btn").attr('disabled', true);
-    // $(".disabled").attr('disabled', true);
-    // $('input[type="text"],textarea').on('keyup', function () {
-    //     var textarea_value = $("#instructions").val();
-    //     var text_value = $('disabled').val();
-    //     if (textarea_value != '' && text_value != '') {
-    //         $('#update-btn').attr('disabled', false);
-    //     } else {
-    //         $('#update-btn').attr('disabled', true);
-    //     }
-    // });
-    // if( $('#client-modal').is(':visible'))
-    //         {
-    //             $("#test1").html("hello");
-    //         } else {
-    //             $("#test1").html("hello");
-    //         }
-    
-    $('#update-btn').click(function(){
+    $("#update-btn,#update-btn2").attr('disabled', true);
+    $('.search-input').on('keyup', function () {
+        $("#update-btn,#update-btn2").attr('disabled', false);
+    });
+    $('#update-btn,#update-btn2').click(function(){
         CKEDITOR.disableAutoInline = true;
-        
-        $("#instructions2").html($('#instructions').html());
-        
+        $("#client2,#client2 + div").html($('#client').html());
+        $("#job_owner2,#job_owner2 + div").html($('#job_owner').html());
+        $("#trackingnumber2,#trackingnumber2 + div").html($('#trackingnumber').html());
+        $("#need_acceptance2,#need_acceptance2 + div").html($('#need_acceptance').html());
+        $("#accept_phone2,#accept_phone2 + div").html($('#accept_phone').html());
+        $("#trades2,#trades2 + div").html($('#trades').html());
+        $("#nte2,#nte2 + div").html($('#nte').html());
+        $("#ok_to_sub2,#ok_to_sub2 + div").html($('#ok_to_sub').html());
+        $("#cam2,#cam2 + div").html($('#cam').html());
+        $("#cc2,#cc2 + div").html($('#cc').html());
+        $("#website2,#website2 + div").html($('#website').html());
+        $("#instructions2,#instructions2 + div").html($('#instructions').html());
         CKEDITOR.inline('client2');
-		CKEDITOR.inline('jobowner2');
-		CKEDITOR.inline('trackingnumber2');
-		CKEDITOR.inline('acceptance2');
-		CKEDITOR.inline('accept-sr2');
-		CKEDITOR.inline('trades2');
-		CKEDITOR.inline('nte2');
-		CKEDITOR.inline('sub2');
-		CKEDITOR.inline('cam2');
-		CKEDITOR.inline('cc2');
-		CKEDITOR.inline('website2');
+        CKEDITOR.inline('jobowner2');
+        CKEDITOR.inline('trackingnumber2');
+        CKEDITOR.inline('acceptance2');
+        CKEDITOR.inline('accept-sr2');
+        CKEDITOR.inline('trades2');
+        CKEDITOR.inline('nte2');
+        CKEDITOR.inline('sub2');
+        CKEDITOR.inline('cam2');
+        CKEDITOR.inline('cc2');
+        CKEDITOR.inline('website2');
         CKEDITOR.inline('instructions2');
-        
+        $("#client-modal").css('display', 'block');
+        $(".modal-overlay").css('display', 'block');
     });
     
     $('#add-btn').click(function(){
         // $('.disabled').prop("disabled", false);
-        $('#cke_14_contents').focus();
+        $("#client2,#client2 + div").html("");
+        $("#job_owner2,#job_owner2 + div").html("");
+        $("#trackingnumber2,#trackingnumber2 + div").html("");
+        $("#need_acceptance2,#need_acceptance2 + div").html("");
+        $("#accept_phone2,#accept_phone2 + div").html("");
+        $("#trades2,#trades2 + div").html("");
+        $("#nte2,#nte2 + div").html("");
+        $("#ok_to_sub2,#ok_to_sub2 + div").html("");
+        $("#cam2,#cam2 + div").html("");
+        $("#cc2,#cc2 + div").html("");
+        $("#website2,#website2 + div").html("");
+        $("#instructions2,#instructions2 + div").html("");
         CKEDITOR.disableAutoInline = true;
 		CKEDITOR.inline('client2');
 		CKEDITOR.inline('jobowner2');
@@ -123,14 +125,14 @@ $(document).ready(function(){
 		CKEDITOR.inline('cam2');
 		CKEDITOR.inline('cc2');
 		CKEDITOR.inline('website2');
-		CKEDITOR.inline('instructions2');
-        // CKEDITOR.replace('test1');
+        CKEDITOR.inline('instructions2');
+        
         // $('.search-input').prop("disabled", true).val("");
         // $(this).addClass('hide');
         // $('#update-btn, #label').addClass('hide');
         // $('#create-btn, #delete-btn').removeClass('hide');
     });
-
+    
     // $('#delete-btn').click(function(){
     //     $('.disabled').prop("disabled", true).val(" ");
     //     $('.search-input').prop("disabled", false);

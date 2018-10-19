@@ -15,7 +15,8 @@
 </head>
 <body>
 	<div id="navbar"></div>
-
+	<section class="section1"><img src="../public/bg1.png"></section>
+    <section class="section2"></section>
 	<div class="container client-container">
 		<div class="row">
 			<div class="col l4 show-on-large"></div>
@@ -27,89 +28,89 @@
 					<button class="material-icons" id="search-btn">search</button>
 				</div>
 				<div class="col l4 show-on-large"></div>
-		</div>
-		
-		<div class="row">
-			<div class="center-align">
-				<button id="update-btn" class="waves-effect waves-light btn-large modal-trigger" data-target="client-modal">Update</button>	
-			</div>
+		</div>	
+		<div class="row">		
 			<div class="card col s12">
-				<div class="center-align">
+				<!-- <div class="center-align">
 					<button type="submit" id="confirm-update-btn" disabled class="waves-effect waves-light btn-large hide">Confirm Update</button>
-					<!-- <button type="submit" id="create-btn" class="waves-effect waves-light btn-large hide blue">Create Client</button> -->
-				</div>
+				</div> -->
 				<div class="row">
-					<div class="col s12 m4 offset-m4 center-align">
-						<h5>Client</h5>
+					<!-- <div class="col s12 m4 right-align hide-on-med-and-up">
+						<button id="update-btn" class="waves-effect waves-light btn-large modal-trigger green" data-target="client-modal">Update</button>	
+						<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="update-btn" data-target="client-modal">
+							<i class="material-icons">edit</i>
+						</button>
+					</div> -->
+					<div class="col s12 m4">
+						<h5 class="form-label">Client:</h5>
 						<div id="client"></div>
 						<hr>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 m4 offset-m4 center-align">
-						<h5>Job Owner</h5>
+					<div class="col s12 m4">
+						<h5 class="form-label">Job Owner:</h5>
 						<div id="job_owner"></div>
 						<hr>
 					</div>
+					<div class="update-cont">
+						<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="update-btn" data-target="client-modal">
+							<i class="material-icons">edit</i>
+						</button>
+					</div>
 				</div>
 				<div class="row">
-					<div class="col s12 l6">
-						<h5>Tracking Number:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">Tracking Number:</h5>
 						<div id="trackingnumber"></div>	
 						<hr>					
 					</div>
-					<div class="col s12 l6">
-						<h5>Needs Acceptance:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">Needs Acceptance:</h5>
 						<div id="need_acceptance"></div>
 						<hr>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l6">
-						<h5>Okay to Accept SRs over the phone?</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">Okay to Accept SRs over the phone?</h5>
 						<div id="accept_phone"></div>
 						<hr>
 					</div>
-					<div class="col s12 l6">
-						<h5>Trades:</h5>
+				</div>
+				<div class="row">
+					<div class="col s12 l4">
+						<h5 class="form-label">Trades:</h5>
 						<div id="trades"></div>
 						<hr>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l6">
-						<h5>NTE:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">NTE:</h5>
 						<div id="nte"></div>
 						<hr>
 					</div>
-					<div class="col s12 l6">
-						<h5>Okay to Sub?</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">Okay to Sub?</h5>
 						<div id="ok_to_sub"></div>
 						<hr>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col s12 l6">
-						<h5>CAMS:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">CAMS:</h5>
 						<div id="cam"></div>
 						<hr>
 					</div>
-					<div class="col s12 l6">
-						<h5>CC:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">CC:</h5>
 						<div id="cc"></div>
 						<hr>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l6">
-						<h5>Website:</h5>
+					<div class="col s12 l4">
+						<h5 class="form-label">Website:</h5>
 						<div id="website"></div>
 						<hr>
 					</div>
 				</div>
 				<div class="row">
 					<div class=" col s12">
-						<h5>Special Instructions:</h5>
+						<h5 class="form-label">Special Instructions:</h5>
 						<div id="instructions"></div>
 						<hr>
 					</div>
@@ -117,108 +118,86 @@
 			</div>
 		</div>
 		<div class="fixed-action-btn">
-			<button class="btn-floating btn-large blue waves-effect waves-light modal-trigger" id="add-btn" data-target="client-modal">
+			<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="add-btn" data-target="client-modal">
 				<i class="material-icons">add</i>
 			</button>
-			<button class="btn-floating btn-large red waves-effect waves-light hide" id="delete-btn">
-				<i class="material-icons">close</i>
-			</button>
-		</div> 
-		
+		</div> 	
 	</div>
 
 	<!-- CREATE/UPDATE CLIENT MODAL -->
 	<div id="client-modal" class="modal">
+		<div class="close-btn">
+			<button class="btn-floating btn-large red waves-effect waves-light modal-action modal-close">
+				<i class="material-icons">close</i>
+			</button>
+		</div>
 		<div class="modal-content">
 			<div class="row">
 				<!-- <textarea name="editor1"></textarea> -->
 				<form class="col s12">
 					<div class="row">
-						<div class="input-field col s12 m6 offset-m3">
-							<h5 class="center-align">Client</h5>
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Client:</h5>
 							<textarea id="client2" name="client2" class="center-align materialize-textarea client2" value="hahaha" contenteditable="true"></textarea>
 						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m6 offset-m3">
-							<h5 class="center-align">Job Owner</h5>
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Job Owner:</h5>
 							<textarea id="job_owner2" name="jobowner2" class="center-align materialize-textarea" value=" " contenteditable="true"></textarea>
-							
 						</div>
 					</div>
 					<div class="row">
-						<div class="input-field col s12 l6">
-							<h5>Tracking Number:</h5>
-							<textarea id="trackingnumber2" name="trackingnumber2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Tracking Number:</h5>
+							<textarea id="trackingnumber2" name="trackingnumber2" class="materialize-textarea" value=" " contenteditable="true"></textarea>							
 						</div>
-						<div class="input-field col s12 l6">
-							<h5>Need Acceptance:</h5>
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Need Acceptance:</h5>
 							<textarea name="acceptance2" id="need_acceptance2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
-							
+						</div>
+						<div class="input-field col s12 m4">
+							<h5 style="font-size: 18px;">Okay to Accept SRs over the phone?</h5>
+							<textarea id="accept_phone2" name="accept-sr2" class="materialize-textarea" value=" " contenteditable="true"></textarea>							
 						</div>
 					</div>
 					<div class="row">
-						<div class="input-field col s12 l6">
-							<h5>Okay to Accept SRs over the phone?</h5>
-							<textarea id="accept_phone2" name="accept-sr2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Trades:</h5>
+							<textarea id="trades2" class="materialize-textarea" name="trades2" value=" " contenteditable="true"></textarea>							
 						</div>
-						<div class="input-field col s12 l6">
-							<h5>Trades:</h5>
-							<textarea id="trades2" class="materialize-textarea" name="trades2" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">NTE:</h5>
+							<textarea id="nte2" class="materialize-textarea" name="nte2" value=" " contenteditable="true"></textarea>							
 						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 l6">
-							<h5>NTE:</h5>
-							<textarea id="nte2" class="materialize-textarea" name="nte2" value=" " contenteditable="true"></textarea>
-							
-						</div>
-						<div class="input-field col s12 l6">
-							<h5>Okay to Sub?</h5>
-							<textarea id="ok_to_sub2" class="materialize-textarea" name="sub2" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Okay to Sub?</h5>
+							<textarea id="ok_to_sub2" class="materialize-textarea" name="sub2" value=" " contenteditable="true"></textarea>							
 						</div>
 					</div>
 					<div class="row">
-						<div class="input-field col s12 l6">
-							<h5>CAMS:</h5>
-							<textarea id="cam2" class="materialize-textarea" name="cam2" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">CAMS:</h5>
+							<textarea id="cam2" class="materialize-textarea" name="cam2" value=" " contenteditable="true"></textarea>							
 						</div>
-						<div class="input-field col s12 l6">
-							<h5>CC:</h5>
-							<textarea id="cc2" class="materialize-textarea" name="cc2" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">CC:</h5>
+							<textarea id="cc2" class="materialize-textarea" name="cc2" value=" " contenteditable="true"></textarea>							
 						</div>
-						
-					</div>
-					<div class="row">
-						<div class="input-field col s12 l6">
-							<h5>Website:</h5>
-							<textarea id="website2" class="materialize-textarea" name="website2" value=" " contenteditable="true"></textarea>
-							
+						<div class="input-field col s12 m4">
+							<h5 class="form-label">Website:</h5>
+							<textarea id="website2" class="materialize-textarea" name="website2" value=" " contenteditable="true"></textarea>							
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<h5>Special Instructions:</h5>
+							<h5 class="form-label">Special Instructions:</h5>
 							<textarea id="instructions2" name="instructions2" class="materialize-textarea" contenteditable="true"></textarea>	
 						</div>
-						
-						<!-- <div class="input-field col s12">
-							<h5>Special Instructions:</h5>
-							<div id="test1" name="test1"></div>		
-						</div> -->
+						<button type="submit" id="create-btn" class="waves-effect waves-light btn-large blue right">Create Client</button>
 					</div>
 				</form>
 			</div>
 		</div>
-		<div class="modal-footer">
-			<button type="submit" id="create-btn" class="waves-effect waves-light btn-large blue">Create Client</button>
-		</div>
+		
 	</div>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
