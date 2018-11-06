@@ -1,102 +1,56 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- DESKTOP NAVBAR -->
 
-<div class="navbar-fixed">
-	<nav>
-		<div class="nav-wrapper blue">
-			<div class="container">
-				<a href="/views/index.html" class="brand-logo">
-					<img src="../public/logo4.png" alt="">
-				</a>
-				<a href="#" class="sidenav-trigger" data-target="mobile-nav">
-					<!-- <i class="fas fa fa-bars" style="font-size: 25px;"></i> -->
-					<i class="material-icons">menu</i>
-				</a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="/views/index.html">Home</a></li>
-					<li><a href="/views/client.html">Clients</a></li>
-					<li><a class="dropdown-trigger" href="#" data-target="dropdown1">Team Statistics<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a class="dropdown-trigger" href="#" data-target="dropdown2">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
-					<li><a href="">Cam Assignments</a></li>
-					<li><a href="">Litmos</a></li>
-					<!-- <li><a href="">Sign Up</a></li>
-					<li><a href="#login-modal" class="modal-trigger">Login</a></li> -->
-				</ul>
-			</div>
-		</div>
-	</nav>
-</div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand brand-logo" href="/views/index.html"><img src="../public/logo5.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!-- DESKTOP DROPDOWN -->
-<ul id="dropdown1" class="dropdown-content">
-	<li><a href="#">one</a></li>
-	<li><a href="#">two</a></li>
-	<li class="divider"></li>
-	<li><a href="#">three</a></li>
-</ul>
-<ul id="dropdown2" class="dropdown-content">
-	<li><a href="#">one</a></li>
-	<li><a href="#">two</a></li>
-	<li class="divider"></li>
-	<li><a href="#">three</a></li>
-</ul>
-
-<div class="modal" id="login-modal">
-	<div class="modal-content center-align">
-		<h3>Login</h3>
-		<form class="s12">
-			<div class="row">
-				<div class="input-field s12">
-					<i class="material-icons prefix">group</i><input type="email" required>
-					<label>Username</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field s12">
-						<i class="material-icons prefix">lock</i><input type="password" required>
-					<label>Password</label>
-				</div>
-			</div>
-			<button class="btn waves-effect waves-light blue" type="submit" name="action">
-				Login
-			</button>
-		</form>
-	</div>
-</div>
-
-<!-- MOBILE SIDENAV -->
-<ul class="sidenav" id="mobile-nav">
-	<li><a href="/views/index.html">Home</a></li>
-	<li><a href="/views/client.html">Clients</a></li>
-	<li><a class="dropdown-trigger" href="#" data-target="dropdown3">Team Statistics<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li><a class="dropdown-trigger" href="#" data-target="dropdown4">Resources<i class="material-icons right">arrow_drop_down</i></a></li>
-	<li><a href="">Cam Assignments</a></li>
-	<li><a href="">Litmos</a></li>
-	<!-- <li><a href="">Sign Up</a></li> -->
-	<!-- <li><a href="#login-modal" class="modal-trigger">Login</a></li> -->
-</ul>
-
-<!-- MOBILE DROPDOWN -->
-<ul id="dropdown3" class="dropdown-content">
-	<li><a href="#">one</a></li>
-	<li><a href="#">two</a></li>
-	<li class="divider"></li>
-	<li><a href="#">three</a></li>
-</ul>
-<ul id="dropdown4" class="dropdown-content">
-	<li><a href="#">one</a></li>
-	<li><a href="#">two</a></li>
-	<li class="divider"></li>
-	<li><a href="#">three</a></li>
-</ul>
-
-<script>
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-
-	$(document).ready(function() {
-		$('.sidenav').sidenav();
-	})
-	$(".dropdown-trigger").dropdown();
-</script>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/views/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/client.html">Clients</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Team Statistics
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Resources
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cam Assignments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Litmos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/views/login.html">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

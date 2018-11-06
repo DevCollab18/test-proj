@@ -4,7 +4,7 @@ body {
     width: 100vw;
     box-sizing: border-box;
     overflow-x: hidden;
-    background-color: #f1f1f1;
+    background-color: #f1f1f1 !important;
 }
 nav ul a {
 	padding: 0 8px !important;
@@ -22,8 +22,25 @@ nav ul a {
 	width: 30%;
 }
 .brand-logo img {
-    width: 230px;
+    width: 140px;
 }
+.navbar {
+    background-color: #2196F3 !important;
+}
+.navbar-brand {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff !important;
+}
+nav ul a {
+    padding: 8px !important;
+}
+.navbar-dark .navbar-toggler, .navbar-dark .navbar-toggler {
+    border: none !important;
+}
+
 /* BACKGROUND */
 .section1 {
     position: absolute;
@@ -52,11 +69,11 @@ nav ul a {
         height: 67vh;
     }
 }
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
     .brand-logo img {
         width: 100%;
     }
-}
+} */
 @media only screen and (min-width: 426px) and (max-width: 800px) {
     .section2 {
         height: 60vh;

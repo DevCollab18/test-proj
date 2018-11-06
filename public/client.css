@@ -1,5 +1,5 @@
 body {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1 !important;
 }
 /* MATERIALIZE - CLIENT PAGE */
 .modal-content .row, .modal-content .input-field {
@@ -27,26 +27,19 @@ body {
 }
 .update-cont {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
 }
 /* textarea {
     height: 100px !important;
 } */
-.modal .modal-content {
-    padding: 0 24px 24px 24px !important;
-}
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
+
 .cke_editable {
     background-color: #fff;
     border: 1px solid #c9c9c9;
     border-radius: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 10px;
+    min-height: 50px;
     overflow-x: auto !important;
 }
 
@@ -57,6 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 96px !important;
 } 
 .client-container ul {
     margin-left: 20px;
@@ -64,11 +58,38 @@ body {
 .client-container ul, .client-container ul > li {
     list-style-type: disc !important;
 }
-.modal {
-    max-height: 80% !important;
-}
 #create-btn {
     margin-top: 30px;
+}
+.fixed-action-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 7%;
+}
+#add-btn {
+    border-radius: 50%;
+    border: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: #25a69a;
+    color: white;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+#update-btn {
+    border-radius: 50%;
+    border: none;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background-color: #25a69a;
+    color: white;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+#submit-btn {
+    float: right;
+    background-color: #25a69a !important;
+    border-color: #25a69a;
 }
 /* MATERIALIZE - CLIENT PAGE - END */
 

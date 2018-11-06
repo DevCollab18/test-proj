@@ -6,12 +6,15 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" href="../public/style.css">
 	<link rel="stylesheet" href="../public/client.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<script src="../public/ckeditor2/ckeditor.js"></script>
 	<script src="../public/client.js"></script>
-	<title>Client Page</title>
+	<title>Clients</title>
+	<link rel="shortcut icon" type="image/x-icon" href="../public/favicon.ico">
 </head>
 <body>
 	<div id="navbar"></div>
@@ -19,193 +22,110 @@
     <section class="section2"></section>
 	<div class="container client-container">
 		<div class="row">
-			<div class="col l4 show-on-large"></div>
-				<div class="search-container input-field col s12 l4">
-					<input id="name-lists" list="data-list" type="text" id="autocomplete-input" class="autocomplete search-input">
-					<datalist id="data-list">
-					</datalist>
-					<label>Search</label>
-					<button class="material-icons" id="search-btn">search</button>
-				</div>
-				<div class="col l4 show-on-large"></div>
+			<div class="col-lg-4"></div>
+			<div class="search-container col-sm-12 col-lg-4 mt-4 mb-4">
+				<input id="name-lists" list="data-list" type="text" id="autocomplete-input" class="autocomplete search-input form-control" placeholder="Clients">
+				<datalist id="data-list">
+				</datalist>
+			</div>
+			<div class="col-lg-4"></div>
 		</div>	
-		<div class="row">		
-			<div class="card col s12">
-				<!-- <div class="center-align">
-					<button type="submit" id="confirm-update-btn" disabled class="waves-effect waves-light btn-large hide">Confirm Update</button>
-				</div> -->
-				<div class="row">
-					<!-- <div class="col s12 m4 right-align hide-on-med-and-up">
-						<button id="update-btn" class="waves-effect waves-light btn-large modal-trigger green" data-target="client-modal">Update</button>	
-						<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="update-btn" data-target="client-modal">
-							<i class="material-icons">edit</i>
-						</button>
-					</div> -->
-					<div class="col s12 m4">
-						<h5 class="form-label">Client:</h5>
-						<div id="client"></div>
-						<hr>
+		<form class="col-sm-12">
+			<div class="row">		
+				<div class="card col-sm-12 p-4 mb-4">
+					<div class="row">
+						<div class="col-sm-12 col-lg-4">
+							<h5>Client:</h5>
+							<div id="client"></div>
+							<textarea id="client2" name="client2" class="form-control client2" contenteditable="true"></textarea>
+							
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>Job Owner:</h5>
+							<div id="job_owner"></div>
+							<textarea id="job_owner2" name="jobowner2" class="form-control" contenteditable="true"></textarea>
+							
+						</div>
+						<div class="update-cont">
+							<button type=button class="" id="update-btn">
+								<i class="material-icons">edit</i>
+							</button>
+						</div>
 					</div>
-					<div class="col s12 m4">
-						<h5 class="form-label">Job Owner:</h5>
-						<div id="job_owner"></div>
-						<hr>
+					<div class="row pt-4">
+						<div class="col-sm-12 col-lg-4">
+							<h5>Tracking Number:</h5>
+							<div id="trackingnumber"></div>	
+							<textarea id="trackingnumber2" name="trackingnumber2" class="form-control" contenteditable="true"></textarea>		
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>Needs Acceptance:</h5>
+							<div id="need_acceptance"></div>
+							<textarea name="acceptance2" id="need_acceptance2" class="form-control" contenteditable="true"></textarea>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>Okay to Accept SRs over the phone?</h5>
+							<div id="accept_phone"></div>
+							<textarea id="accept_phone2" name="accept-sr2" class="form-control" contenteditable="true"></textarea>
+						</div>
 					</div>
-					<div class="update-cont">
-						<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="update-btn" data-target="client-modal">
-							<i class="material-icons">edit</i>
-						</button>
+					<div class="row pt-4">
+						<div class="col-sm-12 col-lg-4">
+							<h5>Trades:</h5>
+							<div id="trades"></div>
+							<textarea id="trades2" class="form-control" name="trades2" contenteditable="true"></textarea>	
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>NTE:</h5>
+							<div id="nte"></div>
+							<textarea id="nte2" class="form-control" name="nte2" contenteditable="true"></textarea>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>Okay to Sub?</h5>
+							<div id="ok_to_sub"></div>
+							<textarea id="ok_to_sub2" class="form-control" name="sub2" contenteditable="true"></textarea>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l4">
-						<h5 class="form-label">Tracking Number:</h5>
-						<div id="trackingnumber"></div>	
-						<hr>					
+					<div class="row pt-4">
+						<div class="col-sm-12 col-lg-4">
+							<h5>CAMS:</h5>
+							<div id="cam"></div>
+							<textarea id="cam2" class="form-control" name="cam2" contenteditable="true"></textarea>
+						</div>
+						<div class="col-sm-12 col-lg-4">
+							<h5>CC:</h5>
+							<div id="cc"></div>
+							<textarea id="cc2" class="form-control" name="cc2" contenteditable="true"></textarea>
+						</div>
+						<div class= "col-sm-12 col-lg-4">
+							<h5>Website:</h5>
+							<div id="website"></div>
+							<textarea id="website2" class="form-control" name="website2" contenteditable="true"></textarea>		
+						</div>
 					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">Needs Acceptance:</h5>
-						<div id="need_acceptance"></div>
-						<hr>
+					<div class="row pt-4">
+						<div class="col-sm-12">
+							<h5>Special Instructions:</h5>
+							<div id="instructions"></div>
+							<textarea id="instructions2" class="form-control" name="instructions2" contenteditable="true" style="display: none;"></textarea>
+						</div>
 					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">Okay to Accept SRs over the phone?</h5>
-						<div id="accept_phone"></div>
-						<hr>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l4">
-						<h5 class="form-label">Trades:</h5>
-						<div id="trades"></div>
-						<hr>
-					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">NTE:</h5>
-						<div id="nte"></div>
-						<hr>
-					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">Okay to Sub?</h5>
-						<div id="ok_to_sub"></div>
-						<hr>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12 l4">
-						<h5 class="form-label">CAMS:</h5>
-						<div id="cam"></div>
-						<hr>
-					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">CC:</h5>
-						<div id="cc"></div>
-						<hr>
-					</div>
-					<div class="col s12 l4">
-						<h5 class="form-label">Website:</h5>
-						<div id="website"></div>
-						<hr>
-					</div>
-				</div>
-				<div class="row">
-					<div class=" col s12">
-						<h5 class="form-label">Special Instructions:</h5>
-						<div id="instructions"></div>
-						<hr>
+					<div class="row pt-4">
+						<div class="col-sm-12">
+							<button type="submit" class="btn btn-primary" id="submit-btn">Update</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 		<div class="fixed-action-btn">
-			<button class="btn-floating btn-large green waves-effect waves-light modal-trigger" id="add-btn" data-target="client-modal">
+			<button id="add-btn">
 				<i class="material-icons">add</i>
 			</button>
 		</div> 	
 	</div>
 
-	<!-- CREATE/UPDATE CLIENT MODAL -->
-	<div id="client-modal" class="modal">
-		<div class="close-btn">
-			<button class="btn-floating btn-large red waves-effect waves-light modal-action modal-close">
-				<i class="material-icons">close</i>
-			</button>
-		</div>
-		<div class="modal-content">
-			<div class="row">
-				<!-- <textarea name="editor1"></textarea> -->
-				<form class="col s12">
-					<div class="row">
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Client:</h5>
-							<textarea id="client2" name="client2" class="center-align materialize-textarea client2" value="hahaha" contenteditable="true"></textarea>
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Job Owner:</h5>
-							<textarea id="job_owner2" name="jobowner2" class="center-align materialize-textarea" value=" " contenteditable="true"></textarea>
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Tracking Number:</h5>
-							<textarea id="trackingnumber2" name="trackingnumber2" class="materialize-textarea" value=" " contenteditable="true"></textarea>							
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Need Acceptance:</h5>
-							<textarea name="acceptance2" id="need_acceptance2" class="materialize-textarea" value=" " contenteditable="true"></textarea>
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 style="font-size: 18px;">Okay to Accept SRs over the phone?</h5>
-							<textarea id="accept_phone2" name="accept-sr2" class="materialize-textarea" value=" " contenteditable="true"></textarea>							
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Trades:</h5>
-							<textarea id="trades2" class="materialize-textarea" name="trades2" value=" " contenteditable="true"></textarea>							
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">NTE:</h5>
-							<textarea id="nte2" class="materialize-textarea" name="nte2" value=" " contenteditable="true"></textarea>							
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Okay to Sub?</h5>
-							<textarea id="ok_to_sub2" class="materialize-textarea" name="sub2" value=" " contenteditable="true"></textarea>							
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">CAMS:</h5>
-							<textarea id="cam2" class="materialize-textarea" name="cam2" value=" " contenteditable="true"></textarea>							
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">CC:</h5>
-							<textarea id="cc2" class="materialize-textarea" name="cc2" value=" " contenteditable="true"></textarea>							
-						</div>
-						<div class="input-field col s12 m4">
-							<h5 class="form-label">Website:</h5>
-							<textarea id="website2" class="materialize-textarea" name="website2" value=" " contenteditable="true"></textarea>							
-						</div>
-					</div>
-					<div class="row">
-						<div class="input-field col s12">
-							<h5 class="form-label">Special Instructions:</h5>
-							<textarea id="instructions2" name="instructions2" class="materialize-textarea" contenteditable="true"></textarea>	
-						</div>
-						<button type="submit" id="create-btn" class="waves-effect waves-light btn-large blue right">Create Client</button>
-					</div>
-				</form>
-			</div>
-		</div>
-		
-	</div>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<script>
-		// CKEDITOR.replace('editor1');
-		
-		
-	</script>
+
 </body>
 </html>
 
