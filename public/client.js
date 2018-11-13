@@ -116,6 +116,7 @@ $(document).ready(function(){
     });	
 
     $('#add-btn').click(function(){
+        $('#client, #client2 + div').attr('data-id', '')
         $("#submit-btn").css("display","block");
         $("#update-btn").attr('disabled', true).css({'background-color' : '#dfdfdf', 'cursor' : 'context-menu'});
         $("#delete-btn").attr('disabled', true).css({'background-color' : '#dfdfdf', 'cursor' : 'context-menu'});
