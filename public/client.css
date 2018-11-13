@@ -25,6 +25,11 @@ body {
 .form-label {
     font-size: 20px;
 }
+.delete-cont {
+    position: absolute;
+    top: 15px;
+    right: 95px;
+}
 .update-cont {
     position: absolute;
     top: 15px;
@@ -83,6 +88,16 @@ body {
     height: 55px;
     cursor: pointer;
     background-color: #25a69a;
+    color: white;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+#delete-btn {
+    border-radius: 50%;
+    border: none;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background-color: red;
     color: white;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 }

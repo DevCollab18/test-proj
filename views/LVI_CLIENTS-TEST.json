@@ -1,0 +1,370 @@
+[
+{
+"_id": "5be3655e6a37d208cd2b3a81",
+"_client": "Advance Autoparts 231"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a82",
+"_client": "ACT - Advanced Cooling Technologies Ni Doc"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a85",
+"_client": "American Express"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a87",
+"_client": "Arby's"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a88",
+"_client": "Autozone"
+},
+{
+"_id": "5be5e51320c5900f7166b9cd",
+"_client": ""
+},
+{
+"_id": "5be5e5fc20c5900f7166b9ce",
+"_client": ""
+},
+{
+"_id": "5be5e5fd20c5900f7166b9cf",
+"_client": ""
+},
+{
+"_id": "5be5e5fd20c5900f7166b9d0",
+"_client": ""
+},
+{
+"_id": "5be3655e6a37d208cd2b3a84",
+"_client": "Amazon"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a89",
+"_client": "Avenue"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8a",
+"_client": "Blink Fitness"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8b",
+"_client": "Bridgestone - Firestone USA"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8c",
+"_client": "Burger King"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8d",
+"_client": "Cinemark Corporate USA"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8e",
+"_client": "Cisco Systems - DO NOT DISPATCH!"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a8f",
+"_client": "Cracker Barrel"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a90",
+"_client": "CVS"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a91",
+"_client": "Dal-Tile / Mohawk Corp"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a92",
+"_client": "DaVita"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a93",
+"_client": "Direct Supply"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a94",
+"_client": "hertz"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a95",
+"_client": "Dollar Tree"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a96",
+"_client": "Dynamite-Garage"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a97",
+"_client": "ECA-Education Corporation of America"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a98",
+"_client": "Fresenius"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a99",
+"_client": "GAP"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9a",
+"_client": "Greyhound Lines, Inc."
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9b",
+"_client": "HERC"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9c",
+"_client": "Hertz Corp"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9d",
+"_client": "Hertz Service"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9e",
+"_client": "Home Depot"
+},
+{
+"_id": "5be3655e6a37d208cd2b3a9f",
+"_client": "IPIC Theaters"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa0",
+"_client": "J Crew"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa1",
+"_client": "JC Penney"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa2",
+"_client": "JJWWS - AFRC"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa3",
+"_client": "JJWWS - Gov't Commissaries"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa4",
+"_client": "JP Morgan Chase"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa5",
+"_client": "Kaplan Schools"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa6",
+"_client": "Kite Realty Group"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa7",
+"_client": "Kmart"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa8",
+"_client": "Liberty Travel"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aa9",
+"_client": "Logan's Roadhouse"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aaa",
+"_client": "Mandee"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aab",
+"_client": "MERCY HEALTH"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aac",
+"_client": "Morgan Stanley ISG"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aad",
+"_client": "MORGAN STANLEY WM"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aae",
+"_client": "Mrs. Greens"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aaf",
+"_client": "Option Care"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab0",
+"_client": "Panera Bread - DO NOT ACCEPT"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab1",
+"_client": "PATOKA CAPITAL"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab2",
+"_client": "Pei Wei"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab3",
+"_client": "Pep Boys"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab4",
+"_client": "PF Chang's"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab5",
+"_client": "Pilot Thomas Logistics"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab6",
+"_client": "PLS Check Cashing"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab7",
+"_client": "PPG Industries"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab8",
+"_client": "Pure Barre - DO NOT DISPATCH"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ab9",
+"_client": "Redden Sky Group. Inc."
+},
+{
+"_id": "5be3655e6a37d208cd2b3aba",
+"_client": "Regal Entertainment Group"
+},
+{
+"_id": "5be3655e6a37d208cd2b3abb",
+"_client": "Regis Salon"
+},
+{
+"_id": "5be3655e6a37d208cd2b3abc",
+"_client": "RITE AID"
+},
+{
+"_id": "5be3655e6a37d208cd2b3abd",
+"_client": "ROSS Dress for Less"
+},
+{
+"_id": "5be3655e6a37d208cd2b3abe",
+"_client": "Ruby Tuesday"
+},
+{
+"_id": "5be3655e6a37d208cd2b3abf",
+"_client": "Samsung"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac0",
+"_client": "Sears"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac1",
+"_client": "Senior Services of America"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac2",
+"_client": "Sneaker Villa"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac3",
+"_client": "Stainless Fixtures, Inc."
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac4",
+"_client": "Starbucks"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac5",
+"_client": "STRATASYS"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac6",
+"_client": "Tires Plus"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac7",
+"_client": "TMX Finance"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac8",
+"_client": "Tractor Supply"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ac9",
+"_client": "Transworld Entertainment"
+},
+{
+"_id": "5be3655e6a37d208cd2b3aca",
+"_client": "ULTA"
+},
+{
+"_id": "5be3655e6a37d208cd2b3acb",
+"_client": "United Health Group"
+},
+{
+"_id": "5be3655e6a37d208cd2b3acc",
+"_client": "United Optical"
+},
+{
+"_id": "5be3655e6a37d208cd2b3acd",
+"_client": "Verizon"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ace",
+"_client": "Wal-Mart"
+},
+{
+"_id": "5be3655e6a37d208cd2b3acf",
+"_client": "Walgreens"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad0",
+"_client": "Wells Fargo"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad1",
+"_client": "Wendy's"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad2",
+"_client": "Winn Dixie"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad3",
+"_client": "Winn Dixie"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad4",
+"_client": "YM, Inc."
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad5",
+"_client": "Zoe's Kitchen"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad6",
+"_client": "AT HOME"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad7",
+"_client": "ASBURY AUTOMOTIVE GROUP"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad8",
+"_client": "Lowes"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ad9",
+"_client": "G6 Hospitality LLC"
+},
+{
+"_id": "5be3655e6a37d208cd2b3ada",
+"_client": "Signet Jewelers"
+}
+]
